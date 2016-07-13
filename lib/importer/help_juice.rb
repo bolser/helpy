@@ -77,9 +77,10 @@ module Importer
         d.body = doc[remap(:doc, :body)]
         d.rank = doc[remap(:doc, :rank)]
         d.meta_description = doc[remap(:doc, :meta_description)]
+        d.user_id = 1
         d.active = true
 
-        # Create categories and asssign        
+        # Create categories and asssign
         if category.is_a?(Array)
           category.each do |category|
             c = Category.find_by(id: category[remap(:category, :id)])
@@ -101,7 +102,7 @@ module Importer
         # Check validity and save
         if d.valid?
           d.save!
-          puts d 
+          puts d
         else
           puts "#{d} was not valid"
         end
