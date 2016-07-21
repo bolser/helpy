@@ -59,6 +59,16 @@ gem 'i18n-country-translations'
 gem 'route_translator'
 gem 'http_accept_language'
 
+# API gems
+gem 'grape'
+gem 'grape-swagger'
+gem 'grape-entity'
+gem 'grape-swagger-rails'
+gem 'grape-swagger-entity'
+gem 'rack-cors', :require => 'rack/cors'
+gem 'doorkeeper'
+gem 'wine_bouncer', '~> 0.5.1'
+
 gem 'permalink_fu'
 gem 'paper_trail'
 
