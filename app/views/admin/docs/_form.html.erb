@@ -30,11 +30,5 @@
   <%= f.input(:front_page, class:'no-translate', inline: true, :label => I18n.translate("activerecord.attributes.doc.front_page", locale: I18n.locale, default: "Feature on front page?")) if params[:lang] == "#{I18n.locale}"  %>
   <%= f.input(:allow_comments, class:'no-translate', inline: true, :label => I18n.translate("activerecord.attributes.doc.allow_comments", locale: I18n.locale, default: "Allow Commenting")) if params[:lang] == "#{I18n.locale}"  %>
   <hr/>
-  <% if params[:lang] == "#{I18n.locale}" %>
-    <div class= "form_group no-translate">
-      <label class="control-label" for="doc_active">Article Status: </label>
-      <%= f.collection_radio_buttons :active, [[true, 'Published'] ,[false, 'Draft']], :first, :last %>
-    </div>
-  <% end %>
   <%= hidden_field_tag :lang, params[:lang] unless params[:lang].nil? %>
   <%= f.submit "Save Changes", class: 'btn btn-warning' %>
